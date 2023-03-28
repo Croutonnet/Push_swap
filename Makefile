@@ -12,6 +12,7 @@ SRCS	=	push.c\
 			rotate.c\
 			swap.c\
 			utils.c\
+			error.c\
 			inside_node.c\
 			verif_node.c\
 			sort.c\
@@ -44,6 +45,8 @@ visu:
 
 re: fclean all
 
+visumake: 
+	git clone https://github.com/o-reo/push_swap_visualizer.git && cd push_swap_visualizer && mkdir build && cd build && cmake .. && make
 test: all
 	@echo "10 tests/ 0 - 500"
 	@./push_swap `ruby -e "puts (1..500).to_a.shuffle.join(' ')"` | wc -l

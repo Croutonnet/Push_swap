@@ -6,7 +6,7 @@
 /*   By: rapelcha <rapelcha@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:56:29 by rapelcha          #+#    #+#             */
-/*   Updated: 2023/03/27 13:58:32 by rapelcha         ###   ########.fr       */
+/*   Updated: 2023/03/28 15:26:59 by rapelcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@ void	pushcat(t_node **p_a, t_node **p_b, t_vari *var, int cat)
 		{
 			if ((*p_a)->cat == cat && var->nb_in_cat > 0)
 			{
-				false = ff(p_a, NULL, cat, 1);
 				pb(p_a, p_b);
+				//move_pile_b(p_a, p_b);
 				var->nb_in_cat--;
+				false = ff(p_a, NULL, cat, 1);
 			}
 			else if (false == 1)
 				rr(p_a, NULL);
 			else
-				rrr(p_a, NULL);
+				rr(p_a, NULL);
 		}
 	}
 }

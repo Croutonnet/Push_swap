@@ -6,7 +6,7 @@
 /*   By: rapelcha <rapelcha@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 09:28:42 by rapelcha          #+#    #+#             */
-/*   Updated: 2023/03/27 15:39:58 by rapelcha         ###   ########.fr       */
+/*   Updated: 2023/03/28 14:18:51 by rapelcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,14 @@ void	index_in_cat(t_node **p, int cat);
 void	manage_node_index(t_node **p, int len);
 void	howmanycat(t_node **p, t_vari *var);
 void	three(t_node **p);
+void	check_int(char **str);
+void	check_alphabet(char **str);
+void	check_double(char **str);
 void	index_node(t_node **p, int i);
 void	four(t_node **p_a, t_node **p_b);
 void	five(t_node **p_a, t_node **p_b);
 void	sort(t_node **p_a, t_node **p_b, t_vari *var, int len);
+void	move_pile_b(t_node **p_a, t_node **p_b);
 int		which_cat(t_node **p, int limit, int i);
 int		isallset(t_node **p, int cat);
 int		iscatthere(t_node **p, int cat);

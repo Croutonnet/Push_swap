@@ -6,7 +6,7 @@
 #    By: rapelcha <rapelcha@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 09:23:06 by rapelcha          #+#    #+#              #
-#    Updated: 2023/03/23 09:33:07 by rapelcha         ###   ########.fr        #
+#    Updated: 2023/03/28 10:30:24 by rapelcha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ RM		=	rm -f
 
 # Sources are all .c files
 SRCS	=	ft_atoi.c\
+			ft_atol.c\
 			ft_bzero.c\
 			ft_calloc.c\
 			ft_isalnum.c\
