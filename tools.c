@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rapelcha <rapelcha@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 10:25:26 by rapelcha          #+#    #+#             */
-/*   Updated: 2023/05/02 12:57:13 by rapelcha         ###   ########.fr       */
+/*   Created: 2023/05/02 12:50:52 by rapelcha          #+#    #+#             */
+/*   Updated: 2023/05/05 08:59:50 by rapelcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_atoi(const char *str)
+static long	ft_splatoi(char *str, int i)
 {
-	size_t	i;
 	int		neg;
-	int		res;
+	long	res;
 
 	if (!str)
 		return (0);
-	i = 0;
 	neg = 1;
 	res = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
@@ -38,4 +36,42 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (res * neg);
+}
+
+int	ft_sstrlen(char *str, int i)
+{
+	int	j;
+
+	j = 0;
+	while (str[i] && str[i] != ' ')
+	{
+		i++;
+		j++;
+	}
+	return (j);
+}
+
+void	create_list(char **arg, t_node **p_a)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (arg[i])
+	{
+		j = 0;
+		while (arg[i][j])
+		{
+			if (ft_splatoi(arg[i], j) > INT_MAX
+				|| ft_splatoi(arg[i], j) < INT_MIN
+				|| ft_sstrlen(arg[i], j) > 11)
+				error_handler();
+			push(p_a, ft_splatoi(arg[i], j), 0, 0);
+			while ((arg[i][j] >= '0' && arg[i][j] <= '9') || arg[i][j] == '-')
+				j++;
+			while (arg[i][j] == ' ')
+				j++;
+		}
+		i++;
+	}
 }

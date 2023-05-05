@@ -6,7 +6,7 @@
 /*   By: rapelcha <rapelcha@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 09:28:42 by rapelcha          #+#    #+#             */
-/*   Updated: 2023/03/28 14:18:51 by rapelcha         ###   ########.fr       */
+/*   Updated: 2023/05/05 08:58:42 by rapelcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ t_node	*create_node(int val);
 t_node	*copy_node(t_node **p);
 void	free_node(t_node *p);
 void	small(t_node **p_a, t_node **p_b, int len);
-void	print_node(t_node *head);
+void	create_list(char **arg, t_node **p_a);
+int		ft_sstrlen(char *str, int i);
 void	push(t_node **p_a, int val, int cat, int i);
 void	push_and_repush(t_node **p_a, t_node **p_b, t_vari *var);
 void	repush(t_node **p_a, t_node **p_b, int cat);
@@ -65,14 +66,15 @@ void	index_in_cat(t_node **p, int cat);
 void	manage_node_index(t_node **p, int len);
 void	howmanycat(t_node **p, t_vari *var);
 void	three(t_node **p);
-void	check_int(char **str);
+void	check_int(t_node **p);
 void	check_alphabet(char **str);
-void	check_double(char **str);
+void	check_double(t_node **p);
 void	index_node(t_node **p, int i);
 void	four(t_node **p_a, t_node **p_b);
 void	five(t_node **p_a, t_node **p_b);
 void	sort(t_node **p_a, t_node **p_b, t_vari *var, int len);
 void	move_pile_b(t_node **p_a, t_node **p_b);
+void	error_handler(void);
 int		which_cat(t_node **p, int limit, int i);
 int		isallset(t_node **p, int cat);
 int		iscatthere(t_node **p, int cat);

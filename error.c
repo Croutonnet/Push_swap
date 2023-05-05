@@ -6,27 +6,22 @@
 /*   By: rapelcha <rapelcha@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:21:40 by rapelcha          #+#    #+#             */
-/*   Updated: 2023/03/28 12:51:30 by rapelcha         ###   ########.fr       */
+/*   Updated: 2023/05/05 08:59:29 by rapelcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_int(char **str)
+void	check_int(t_node **p)
 {
-	int		i;
-	long	nb;
+	t_node	*temp;
 
-	i = 1;
-	while (str[i])
+	temp = (*p);
+	while (temp->next)
 	{
-		nb = ft_atol(str[i]);
-		if (nb > INT_MAX || nb < INT_MIN || ft_strlen(str[i]) > 11)
-		{
-			ft_putendl_fd("Error", 2);
-			exit (1);
-		}
-		i++;
+		if (temp->val > INT_MAX || temp->val < INT_MIN)
+			error_handler();
+		temp = temp->next;
 	}
 }
 
@@ -41,46 +36,39 @@ void	check_alphabet(char **str)
 		j = 0;
 		while (str[i][j])
 		{
-			if (str[i][j] == 45 && (ft_isdigit(str[i][j - 1]) == 1
-				|| ft_isdigit(str[i][j + 1]) == 0))
-			{
-				ft_putendl_fd("Error", 2);
-				exit (1);
-			}
+			if ((str[i][j] == 45 && (ft_isdigit(str[i][j - 1]) == 1
+				|| ft_isdigit(str[i][j + 1]) == 0)))
+				error_handler();
 			else if (!((str[i][j] >= 48 && str[i][j] <= 57) || str[i][j] == 32
 				|| str[i][j] == 45))
-			{
-				ft_putendl_fd("Error", 2);
-				exit (1);
-			}
+				error_handler();
 			j++;
 		}
 		i++;
 	}
 }
 
-void	check_double(char **str)
+void	check_double(t_node **p)
 {
-	int	nb;
-	int	verif;
-	int	i;
-	int	j;
+	t_node	*temp1;
+	t_node	*temp2;
 
-	i = 1;
-	while (str[i])
+	temp1 = (*p);
+	while (temp1)
 	{
-		verif = ft_atoi(str[i]);
-		j = i + 1;
-		while (str[j])
+		temp2 = temp1->next;
+		while (temp2)
 		{
-			nb = ft_atoi(str[j]);
-			if (verif == nb)
-			{
-				ft_putendl_fd("Error", 2);
-				exit (1);
-			}
-			j++;
+			if (temp1->val == temp2->val)
+				error_handler();
+			temp2 = temp2->next;
 		}
-		i++;
+		temp1 = temp1->next;
 	}
+}
+
+void	error_handler(void)
+{
+	ft_putendl_fd("Error", 2);
+	exit(1);
 }

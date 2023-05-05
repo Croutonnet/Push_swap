@@ -6,7 +6,7 @@
 /*   By: rapelcha <rapelcha@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:53:42 by rapelcha          #+#    #+#             */
-/*   Updated: 2023/03/27 14:06:38 by rapelcha         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:43:09 by rapelcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	index_in_cat(t_node **p, int cat)
 			temp = (*p);
 			continue ;
 		}
-		else if (big == INT_MIN || isallset(p, cat) == 1)
+		else if (isallset(p, cat) == 1)
 			return ;
 		else if (temp->val == big && temp->i == 0)
 		{

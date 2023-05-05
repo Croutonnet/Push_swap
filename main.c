@@ -6,7 +6,7 @@
 /*   By: rapelcha <rapelcha@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:13:27 by rapelcha          #+#    #+#             */
-/*   Updated: 2023/03/28 14:18:45 by rapelcha         ###   ########.fr       */
+/*   Updated: 2023/05/05 09:10:15 by rapelcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,21 +87,20 @@ int	main(int argc, char **argv)
 	t_node	*p_a;
 	t_node	*p_b;
 	t_vari	var;
+	int		i;
 
+	i = 1;
 	if (argc < 2)
 		return (0);
+	while (argv[i][0] == '\0' && i < (argc - 1))
+		i++;
+	if (argv[i][0] == '\0')
+		error_handler();
 	p_a = NULL;
 	p_b = NULL;
-	check_int(argv);
 	check_alphabet(argv);
-	check_double(argv);
-	argv++;
-	while (*argv)
-	{
-		push(&p_a, ft_atoi(*argv), 0, 0);
-		p_a->i = 0;
-		argv++;
-	}
+	create_list(argv, &p_a);
+	check_double(&p_a);
 	if (is_sort(&p_a) == 0)
 		sort(&p_a, &p_b, &var, node_len(p_a));
 	if (p_a)
@@ -109,4 +108,3 @@ int	main(int argc, char **argv)
 	if (p_b)
 		free_node(p_b);
 }
-	

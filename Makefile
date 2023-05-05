@@ -18,6 +18,7 @@ SRCS	=	push.c\
 			sort.c\
 			small.c\
 			false.c\
+			tools.c\
 
 
 OBJS	=	$(SRCS:.c=.o)
