@@ -6,15 +6,13 @@
 /*   By: rapelcha <rapelcha@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 09:28:42 by rapelcha          #+#    #+#             */
-/*   Updated: 2023/05/05 08:58:42 by rapelcha         ###   ########.fr       */
+/*   Updated: 2023/05/08 10:04:16 by rapelcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
-# include <limits.h>
 # include "libft/libft.h"
 
 typedef struct s_node

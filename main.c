@@ -6,7 +6,7 @@
 /*   By: rapelcha <rapelcha@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:13:27 by rapelcha          #+#    #+#             */
-/*   Updated: 2023/05/08 08:52:01 by rapelcha         ###   ########.fr       */
+/*   Updated: 2023/05/08 10:04:04 by rapelcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int	main(int argc, char **argv)
 	while (argv[i][0] == '\0' && i < (argc - 1))
 		i++;
 	if (argv[i][0] == '\0')
-		error_handler();
+		return (0);
 	p_a = NULL;
 	p_b = NULL;
 	check_alphabet(argv);
